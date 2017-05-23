@@ -5,6 +5,9 @@
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.util.Map;
+import java.util.HashMap;
+
 import static spark.Spark.get;
 import static spark.Spark.post;
 
@@ -18,12 +21,16 @@ public class Main {
         }, new HandlebarsTemplateEngine());
 
         get("/dashboard", (req, res) -> {
-            return new ModelAndView(null,"dashboard.hbs");
+            Map<String, String> model = new HashMap<>();
+            model.put("name", req.cookie("name"));
+            return new ModelAndView(model,"dashboard.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/login", (req, res) -> {
-           req.session().attribute("name",req.attribute("name"));
-           response.redirect("/login");
+           res.cookie("name",req.queryParams("name"));
+           System.out.println(req.queryParams("name"));
+           res.redirect("/dashboard");
+           return "";
         });
 
 
