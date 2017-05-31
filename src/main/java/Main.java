@@ -15,6 +15,8 @@ import static spark.Spark.post;
 public class Main {
     public static void main(String[] args) {
 
+        postDAO.java dao = new SimplePostDAO();
+
 
         get("/", (req, res) -> {
             return new ModelAndView(null, "index.hbs");
