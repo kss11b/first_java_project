@@ -34,7 +34,7 @@ public class Main {
 
         post("/create", (req, res) -> {
            res.cookie("name",req.queryParams("user"));
-           System.out.println(req.queryParams("name"));
+           System.out.println(req.queryParams("user"));
            String title = req.queryParams("title");
            String text = req.queryParams("text");
            String user = req.queryParams("user");

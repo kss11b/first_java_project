@@ -10,11 +10,13 @@
 
 </head>
 <body>
-<h1>Here are posts!</h1>
+<h1>Here are posts! {{ name }}</h1>
+{{#each posts}}
 <ul>
-  {{ #each userposts}}
+  <li>{{ user }}</li>
   <li> {{ title }}</li>
   <li> {{ text }}</li>
-  <li> {{ user }}</li>
-  {{ /each }}
 </ul>
+{{/each}}
+
+<a href="/"> Add another post</a>

@@ -16,7 +16,13 @@ public class Post {
     public String getTitle(){
         return title;
     }
-
+    public String getText()
+    {
+        return text;
+    }
+    public String getUser(){
+        return user;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -37,12 +43,7 @@ public class Post {
         return result;
     }
 
-    public String getText(){
-        return text;
-    }
-    public String getUser(){
-        return user;
-    }
+
 
 
 }
