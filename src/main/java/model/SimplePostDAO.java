@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Kyle Stainsby on 5/31/2017.
  */
@@ -7,13 +10,13 @@ public class SimplePostDAO implements postDAO{
 
     private List<post> userposts;
 
-    public SimplePostsDAO(){
+    public SimplePostDAO(){
         userposts = new ArrayList<>();
     }
 
     @Override
-    public boolean add() {
-        return userposts.add(post);
+    public boolean add(post userpost){
+        return userposts.add(userpost);
     }
 
     @Override

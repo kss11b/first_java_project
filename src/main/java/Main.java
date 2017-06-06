@@ -2,6 +2,8 @@
  * Created by Kyle Stainsby on 5/3/2017.
  */
 
+import model.SimplePostDAO;
+import model.postDAO;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -15,7 +17,7 @@ import static spark.Spark.post;
 public class Main {
     public static void main(String[] args) {
 
-        postDAO.java dao = new SimplePostDAO();
+        postDAO dao = new SimplePostDAO();
 
 
         get("/", (req, res) -> {
