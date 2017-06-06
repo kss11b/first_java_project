@@ -10,4 +10,11 @@
 
 </head>
 <body>
-<p>Welcome {{name}} !</p>
+<h1>Here are posts!</h1>
+<ul>
+  {{ #each userposts}}
+  <li> {{ title }}</li>
+  <li> {{ text }}</li>
+  <li> {{ user }}</li>
+  {{ /each }}
+</ul>
